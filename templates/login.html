@@ -1,0 +1,105 @@
+
+<!doctype html>
+{% load static %}                   <!--this code helps to load files from static folder-->
+{% static "images" as basurl%}
+
+<html lang="en">
+<head>
+
+
+
+  <title>Login</title>
+   <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="6620913">
+     <meta name="keywords" content="">
+     <meta name="author" content="6620913">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>                           <!--this codes import css files from static folder -->
+     <link rel="stylesheet" href={% static 'css/font-awesome.min.css'%}>
+     <link rel="stylesheet" href={% static 'css/owl.carousel.css' %}>
+     <link rel="stylesheet" href={% static 'css/owl.theme.default.min.css' %}>
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href={% static 'css/templatemo-style.css' %}>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+         <section id="usercss">
+          <div class="container">
+
+
+                    <div class="col-md-6 col-sm-12">
+
+                         <form id="usercss-form" role="form" action="login" method="post">
+
+                                   {% csrf_token  %}
+
+                                        <div class="section-title">
+                                                <h2>Welcome<small>Login here</small></h2>
+                                        </div>
+
+                                    <div class="col-md-12 col-sm-12">
+
+
+
+                                        <h3><a class="smoothScroll">Username</a></h3>
+
+                                        <input type="text" class="form-control"  name="username" placeholder="Username">
+
+
+
+
+
+                                        <h3><a class="smoothScroll">Password</a></h3>
+
+                                        <input type="password" class="form-control"  name="password" placeholder="Password">
+
+
+
+                                        <br>
+
+                                </div>
+
+                                        <div class="col-md-4 col-sm-12">
+                                                {% for message in messages %}
+                                                <h3 class="smoothScroll">{{message}}</h3>
+                                                {%endfor%}
+                                                <input type="submit" class="form-control"  value="Login">
+
+                                        </div>
+
+
+
+
+                        </form>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="contact-image">
+                              <img src={% static 'images/register-image.jpg' %}  class="img-responsive" alt="Smiling Two Girls">
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+  <!-- SCRIPTS -->
+     <script src={% static 'js/jquery.js'%}></script>
+     <script src={% static 'js/bootstrap.min.js'%}></script>
+     <script src={% static 'js/owl.carousel.min.js' %}></script>
+     <script src={% static 'js/smoothscroll.js'%}></script>
+     <script src={% static 'js/custom.js' %}></script>
+</body>
+</html>
